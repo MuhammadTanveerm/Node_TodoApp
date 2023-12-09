@@ -12,10 +12,10 @@ const { errmiddleware } = require('./middleware/error.js');
 
 app.use("/api/v1", user)
 app.use("/api/v1", tasks)
-app.use( cors({
+app.use( cors({  
         origin:[process.env.FRONTEND_URL],
         methods :["GET", "POST", "PUT", "DELETE"],
-    // credentials: true,
+     credentials: true,
     })
     )
 app.use(errmiddleware)
